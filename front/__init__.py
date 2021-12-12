@@ -30,7 +30,7 @@ def face_detect_post():
 
         video_file = request.files['object_file']
         video_file.save('./front/static/input/' + str(video_file.filename))
-        video_file_path = './front/static/input/' + str(video_file.filename)
+        video_file_path = '/front/static/input/' + str(video_file.filename)
 
         fin_video = process_video(video_path=video_file_path, known_face=known_face_encoding)
         shutil.copy(fin_video, './front/static/output.mp4')
